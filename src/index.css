@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Light mode - default */
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 210 40% 98%;
+    --card-foreground: 222 47% 11%;
+    --card-hover: 226 100% 97%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 217 95% 47%;
+    --primary-hover: 217 95% 39%;
+    --primary-active: 217 95% 31%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217 95% 47%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 217 31% 34%;
+    --muted-foreground: 215 19% 35%;
+    --accent: 217 95% 47%;
+    --accent-foreground: 0 0% 100%;
+    --border: 214 32% 91%;
+    --input: 210 40% 96%;
+    --ring: 217 95% 47%;
+    --radius: 0.75rem;
+  }
+
+  /* Dark mode */
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    --card: 217 33% 17%;
+    --card-foreground: 210 40% 98%;
+    --card-hover: 222 47% 11%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217 91% 60%;
+    --primary-hover: 221 83% 53%;
+    --primary-active: 221 83% 47%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217 91% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+    --border: 215 25% 27%;
+    --input: 215 25% 27%;
+    --ring: 217 91% 60%;
+  }
+}
+
+@layer components {
+  .bg-gradient-hero {
+    background-image: linear-gradient(
+      135deg,
+      hsl(var(--primary)) 0%,
+      hsl(var(--primary) / 0.8) 50%,
+      hsl(var(--accent)) 100%
+    );
+  }
+
+  .bg-gradient-card {
+    background-color: hsl(var(--card));
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .bg-gradient-card:hover {
+    background-color: hsl(var(--card-hover));
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  }
+
+  .shadow-card {
+    box-shadow: 
+      0 1px 3px rgba(0, 0, 0, 0.05),
+      0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .shadow-hero {
+    box-shadow: 
+      0 10px 15px -3px rgba(0, 0, 0, 0.08),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+  }
+}
+
+@layer utilities {
+  .animate-float-slow {
+    animation: float-slow 15s ease-in-out infinite;
+  }
+
+  .animate-float-slow-reverse {
+    animation: float-slow-reverse 18s ease-in-out infinite;
+  }
+  
+  .animate-scale-in {
+    animation: scale-in 0.5s ease-out forwards;
+  }
+  
+  .animate-scale-in-delay-1 {
+    animation: scale-in 0.5s ease-out forwards;
+    animation-delay: 0.1s;
+  }
+  
+  .animate-scale-in-delay-2 {
+    animation: scale-in 0.5s ease-out forwards;
+    animation-delay: 0.2s;
+  }
+  
+  .animate-scale-in-delay-3 {
+    animation: scale-in 0.5s ease-out forwards;
+    animation-delay: 0.3s;
+  }
+  
+  .animate-fade-in-delay-2 {
+    animation: fade-in 0.5s ease-out forwards;
+    animation-delay: 0.2s;
+  }
+  
+  .animate-fade-in-delay-4 {
+    animation: fade-in 0.5s ease-out forwards;
+    animation-delay: 0.4s;
+  }
+  
+  .animate-fade-in-delay-6 {
+    animation: fade-in 0.5s ease-out forwards;
+    animation-delay: 0.6s;
+  }
+  
+  .animate-fade-in-delay-8 {
+    animation: fade-in 0.5s ease-out forwards;
+    animation-delay: 0.8s;
+  }
+  
+  .animate-fade-in-delay-10 {
+    animation: fade-in 0.5s ease-out forwards;
+    animation-delay: 1s;
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-20px, 20px); }
+}
+
+@keyframes float-slow-reverse {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(20px, -20px); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(-20px); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(1.05); }
+}
